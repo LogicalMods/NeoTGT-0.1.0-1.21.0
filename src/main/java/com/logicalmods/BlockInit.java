@@ -9,13 +9,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class BlockInit {
 
+    //Register method
     public static void register(IEventBus bus){
         BLOCKS.register(bus);
     }
 
-    // Create a Deferred Register to hold Blocks which will all be registered under the "tgtools" namespace
+    //Creates deferred register for blocks themselves, BlockItem will be accepted at addCreative() in main
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TreeGuyTools.MODID);
 
-    // Creates a new Block with the id "tgtools:example_block", combining the namespace and path
+    // Creates a new block
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
 }

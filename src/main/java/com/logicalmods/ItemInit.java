@@ -4,16 +4,14 @@ import com.logicalmods.fuel.FuelItemBase;
 import com.logicalmods.item.ClipperBase;
 import com.logicalmods.item.SplitterBase;
 import com.logicalmods.util.Tiers;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Supplier;
-
 public class ItemInit {
 
+    //Register method
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }
@@ -24,19 +22,21 @@ public class ItemInit {
     // Creates a new BlockItem with the id "tgtools:example_block", combining the namespace and path
     //public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", BlockInit.EXAMPLE_BLOCK);
 
-    // Creates a new food item with the id "tgtools:example_id", nutrition 1 and saturation 2
+    // Clipper list
     public static final DeferredItem<Item> T1_CLIPPERS = ITEMS.register("t1_clippers", () -> new ClipperBase(new Item.Properties().durability(56)));
     public static final DeferredItem<Item> T2_CLIPPERS = ITEMS.register("t2_clippers", () -> new ClipperBase(new Item.Properties().durability(112)));
     public static final DeferredItem<Item> T3_CLIPPERS = ITEMS.register("t3_clippers", () -> new ClipperBase(new Item.Properties().durability(672)));
     public static final DeferredItem<Item> T4_CLIPPERS = ITEMS.register("t4_clippers", () -> new ClipperBase(new Item.Properties().durability(1120)));
 
+    //Splitter list
     public static final DeferredItem<Item> T1_SPLITTER = ITEMS.register("t1_splitter", () -> new SplitterBase(Tiers.T1, new Item.Properties()));
     public static final DeferredItem<Item> T2_SPLITTER = ITEMS.register("t2_splitter", () -> new SplitterBase(Tiers.T2, new Item.Properties()));
     public static final DeferredItem<Item> T3_SPLITTER = ITEMS.register("t3_splitter", () -> new SplitterBase(Tiers.T3, new Item.Properties()));
     public static final DeferredItem<Item> T4_SPLITTER = ITEMS.register("t4_splitter", () -> new SplitterBase(Tiers.T4, new Item.Properties()));
 
-    public static final DeferredItem<Item> FIREWOOD_LOG = ITEMS.register("firewood", () -> new FuelItemBase(new Item.Properties(), 400));
-    public static final DeferredItem<Item> CHOPPED_LEAVES = ITEMS.register("chopped_leaves", () -> new FuelItemBase(new Item.Properties(), 285));
+    //Fuel item list
+    public static final DeferredItem<Item> FIREWOOD_LOG = ITEMS.register("firewood", () -> new FuelItemBase(new Item.Properties().stacksTo(16), 400));
+    public static final DeferredItem<Item> CHOPPED_LEAVES = ITEMS.register("chopped_leaves", () -> new FuelItemBase(new Item.Properties().stacksTo(32), 285));
 
 
 }

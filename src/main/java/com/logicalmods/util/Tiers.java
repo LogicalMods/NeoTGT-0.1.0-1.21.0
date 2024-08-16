@@ -8,6 +8,7 @@ import net.neoforged.neoforge.common.SimpleTier;
 
 public class Tiers {
 
+    //Individual tiers for AxeItem extension in our ItemInit class
     public static final Tier T1 = new SimpleTier(
             BlockTags.LOGS,
             112,
@@ -15,8 +16,8 @@ public class Tiers {
             2.0f,
             20,
             ()-> Ingredient.of(Items.STONE)
-
-    );    public static final Tier T2 = new SimpleTier(
+    );
+    public static final Tier T2 = new SimpleTier(
             BlockTags.LOGS,
             224,
             7,

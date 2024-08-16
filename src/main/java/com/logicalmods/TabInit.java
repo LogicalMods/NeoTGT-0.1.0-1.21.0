@@ -10,14 +10,15 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class TabInit {
 
+    //Register method
     public static void register(IEventBus bus){
         TGTABS.register(bus);
     }
 
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "tgtools" namespace
+    // Creates deferred register for tabs
     public static final DeferredRegister<CreativeModeTab> TGTABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TreeGuyTools.MODID);
 
-    // Creates a creative tab with the id "tgtools:example_tab" for the example item, that is placed after the combat tab
+    // Creates the tab itself and accepts items, BlockItem are accepted at the addCreative() in main
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TG_TAB = TGTABS.register("neotgt", () -> CreativeModeTab.builder()
             .title(Component.translatable("creativeTab.tgtools"))
             .icon(() -> ItemInit.T4_CLIPPERS.get().getDefaultInstance()).displayItems((parameters, output) -> {
