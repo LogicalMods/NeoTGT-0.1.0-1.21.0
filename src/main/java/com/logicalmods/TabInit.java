@@ -18,10 +18,10 @@ public class TabInit {
     public static final DeferredRegister<CreativeModeTab> TGTABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TreeGuyTools.MODID);
 
     // Creates a creative tab with the id "tgtools:example_tab" for the example item, that is placed after the combat tab
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = TGTABS.register("NeoTGT", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TG_TAB = TGTABS.register("neotgt", () -> CreativeModeTab.builder()
             .title(Component.translatable("creativeTab.tgtools"))
-            .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ItemInit.T4_CLIPPERS.get().getDefaultInstance()).displayItems((parameters, output) -> {
+
                 output.accept(ItemInit.T1_CLIPPERS.get());
                 output.accept(ItemInit.T2_CLIPPERS.get());
                 output.accept(ItemInit.T3_CLIPPERS.get());
