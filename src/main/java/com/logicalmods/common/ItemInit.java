@@ -1,5 +1,6 @@
-package com.logicalmods;
+package com.logicalmods.common;
 
+import com.logicalmods.TreeGuyTools;
 import com.logicalmods.fuel.FuelItemBase;
 import com.logicalmods.item.ClipperBase;
 import com.logicalmods.item.SplitterBase;
