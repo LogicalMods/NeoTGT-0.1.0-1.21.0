@@ -32,7 +32,7 @@ Clipper Recipe:
 
 	(# # - Copper, iron, gold, diamond)
 
-	(X - stick) 
+	( X - stick) 
 
 	( # - Copper, iron, gold, diamond) 
  
